@@ -78,7 +78,7 @@ public class Main2Activity extends AppCompatActivity {
         toolbar.setTitleMargin(0, 0, 0, 0);
         toolbar.setSubtitle("CRUD MySQL~2019");
         toolbar.setSubtitleTextColor(getResources().getColor(R.color.colorPrimaryDark));
-        toolbar.setTitle("Prof. Gámez");
+        toolbar.setTitle("Xiomara Hernández");
         setSupportActionBar(toolbar);
 
         ///y esto para pantalla completa (oculta incluso la barra de estado)
