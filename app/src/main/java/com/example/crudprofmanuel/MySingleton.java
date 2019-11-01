@@ -56,7 +56,7 @@ public class MySingleton {
         return mRequestQueue;
     }
 
-    public <T> void addToRequestQueue(StringRequest req) {
+    public <T> void addToRequestQueue(Request<T> req) {
         getRequestQueue().add(req);
     }
 
