@@ -38,7 +38,7 @@ public class Main2Activity extends AppCompatActivity {
     String precio = "";
 
     MantenimientoMySQL manto = new MantenimientoMySQL();
-    //Dto datos = new Dto();
+    Dto datos = new Dto();
 
     //Banderas para saber estados de métodos del CRUD.
     boolean estadoGuarda = false;
@@ -74,10 +74,10 @@ public class Main2Activity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
-        //toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor1));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor1));
         toolbar.setTitleMargin(0, 0, 0, 0);
         toolbar.setSubtitle("CRUD MySQL~2019");
-      //  toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolor));
+        toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolor));
         toolbar.setTitle("Prof. Gámez");
         setSupportActionBar(toolbar);
 
@@ -98,7 +98,7 @@ public class Main2Activity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //DialogConfirmacion();//comentario
+                DialogConfirmacion();
             }
         });
 
@@ -271,10 +271,10 @@ public class Main2Activity extends AppCompatActivity {
                     String descripcion = et_descripcion.getText().toString();
                     String precio = et_precio.getText().toString();
 
-                    //datos.setCodigo(Integer.parseInt(cod));
-                    //datos.setDescripcion(descripcion);
-                    //datos.setPrecio(Double.parseDouble(precio));
-                    //manto.modificar(Main2Activity.this, datos);
+                    datos.setCodigo(Integer.parseInt(cod));
+                    datos.setDescripcion(descripcion);
+                    datos.setPrecio(Double.parseDouble(precio));
+                    manto.modificar(Main2Activity.this, datos);
                     limpiarDatos();
                     et_codigo.requestFocus();
                 }
@@ -304,23 +304,22 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-    /* @Override comentario
-   public boolean onCreateOptionsMenu(Menu menu) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;*/
+        return true;
     }
 
-//@Overridecomentario
-   /* public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();*/
+        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        //aca comienza el comentario
-      /* if (id == R.id.action_limpiar) {
+        if (id == R.id.action_limpiar) {
             et_codigo.setText(null);
             et_descripcion.setText(null);
             et_precio.setText(null);
@@ -335,7 +334,7 @@ public class Main2Activity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }*///aca termina
+    }
 
     /*
     @Override
@@ -343,8 +342,8 @@ public class Main2Activity extends AppCompatActivity {
         //Toast.makeText(this, "Código: "+datos.getCodigo(), Toast.LENGTH_SHORT).show();
     }*/
 
-//aca es otro
-   /* private void DialogConfirmacion(){
+
+    private void DialogConfirmacion(){
         //startActivity(new Intent(getApplicationContext(),MainActivity.class));
         String mensaje = "¿Realmente desea salir?";
         dialogo = new AlertDialog.Builder(Main2Activity.this);
@@ -355,7 +354,7 @@ public class Main2Activity extends AppCompatActivity {
         dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo, int id) {
                 /*Intent intent = new Intent(DashboardLuces.this, luces_control_sms.class);
-                startActivity(intent);//aca va uno
+                startActivity(intent);*/
                 Main2Activity.this.finishAffinity();
                 //Main2Activity.this.finish();
             }
@@ -367,11 +366,10 @@ public class Main2Activity extends AppCompatActivity {
         });
         dialogo.show();
     }
-*///aca termina
+
 
     //Creación de HILOS
-        //aca otro
-    /*void Hilo(){
+    void Hilo(){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -394,10 +392,10 @@ public class Main2Activity extends AppCompatActivity {
                 });
             }
         }).start();
-    }*///aca termina
+    }
 
-//aca comienza
-   /* private void demora(){
+
+    private void demora(){
         try{
             Thread.sleep(1000);
         }catch (InterruptedException e){}
@@ -419,8 +417,9 @@ public class Main2Activity extends AppCompatActivity {
     public String getSharedPrecio(Context context) {
         SharedPreferences preferences = context.getSharedPreferences("profeGamez", MODE_PRIVATE);
         String precio = preferences.getString("precio","0.0");
-        return precio;   //return preferences.getString("tiempo", "Sin configurar.");*/
+        return precio;   //return preferences.getString("tiempo", "Sin configurar.");
+    }
 
-//aca va una llave
 
 
+}
